@@ -1,0 +1,23 @@
+let light = 0
+let direction = 0
+input.onButtonPressed(Button.AB, () => {
+    basic.showString("LIGHT=")
+    light = input.lightLevel()
+    basic.showNumber(light)
+    basic.showString(" TEMP=")
+    temp = input.temperature()
+    basic.showNumber(temp)
+})
+input.onButtonPressed(Button.A, () => {
+    direction = input.compassHeading()
+    basic.showNumber(direction)
+})
+let temp = 0
+if (light >= 90 && light <= 110 &&   (temp = 25)) {
+    music.beginMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.Forever)
+} else {
+    music.ringTone(349)
+}
+basic.forever(() => {
+	
+})
